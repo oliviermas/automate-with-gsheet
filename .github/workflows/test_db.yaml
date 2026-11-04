@@ -7,10 +7,10 @@ jobs:
   testDB:
     runs-on: ubuntu-latest
     env:
-      DB_USER: ${{ secrets.PG_USER }}
-      DB_PASSWORD: ${{ secrets.PG_PASSWORD }}
-      DB_HOST: ${{ secrets.PG_DB }}
-      DB_PORT: ${{ vars.PG_PORT }}
+      PG_USER: ${{ secrets.PG_USER }}
+      PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
+      PG_HOST: ${{ secrets.PG_DB }}
+      PG_PORT: ${{ vars.PG_PORT }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -25,8 +25,8 @@ jobs:
 
       - name: run script
         env: 
-          DB_USER: ${{ secrets.PG_USER }}
-          DB_PASSWORD: ${{ secrets.PG_PASSWORD }}
-          DB_HOST: ${{ secrets.PG_DB }}
-          DB_PORT: ${{ vars.PG_PORT }}
+          PG_USER: ${{ secrets.PG_USER }}
+          PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
+          PG_HOST: ${{ secrets.PG_DB }}
+          PG_PORT: ${{ vars.PG_PORT }}
         run: python test_connection_db.py
