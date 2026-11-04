@@ -24,9 +24,9 @@ jobs:
           PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
           PG_HOST: ${{ secrets.PG_HOST }}
           PG_PORT: ${{ vars.PG_PORT }}
-          SHEET_ID: $${{ secrets.SHEET_ID }}
-          WORKSHEET: $${{ vars.WORKSHEET }}
-          GOOGLE_SA_KEY_JSON: $${{ secrets.GOOGLE_SA_KEY_JSON }}
-          PG_DB: $${{ secrets.PG_DB }}
-          PG_TABLE: $${{ vars.PG_TABLE }}
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          WORKSHEET: ${{ vars.WORKSHEET }}
+          GOOGLE_SA_KEY_JSON: ${{ secrets.GOOGLE_SA_KEY_JSON }}
+          PG_DB: ${{ secrets.PG_DB }}
+          PG_TABLE: ${{ vars.PG_TABLE }}
         run: python etl.py
