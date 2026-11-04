@@ -6,11 +6,6 @@ on:
 jobs:
   testDB:
     runs-on: ubuntu-latest
-    env:
-      PG_USER: ${{ secrets.PG_USER }}
-      PG_PASSWORD: ${{ secrets.PG_PASSWORD }}
-      PG_HOST: ${{ secrets.PG_HOST }}
-      PG_PORT: ${{ vars.PG_PORT }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
