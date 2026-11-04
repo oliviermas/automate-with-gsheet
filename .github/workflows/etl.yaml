@@ -1,4 +1,4 @@
-name: ETAL workflow
+name: ETL workflow
 
 on:
   workflow_dispatch:
