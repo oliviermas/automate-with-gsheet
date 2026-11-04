@@ -1,0 +1,27 @@
+name: test DB workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  testDB:
+    runs-on: ubuntu-latest
+    env:
+      DB_USER: ${{secrets.PG_USER}}
+      DB_PASSWORD: ${{secrets.PG_PASSWORD}}
+      DB_HOST: ${{secrets.PG_DB}}
+      DB_PORT: ${{vars.PG_PORT}}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+      
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13" 
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: run script
+        run: python test_connection_db.py
