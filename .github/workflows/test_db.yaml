@@ -24,4 +24,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: run script
+        env: 
+          DB_USER: ${{ secrets.PG_USER }}
+          DB_PASSWORD: ${{ secrets.PG_PASSWORD }}
+          DB_HOST: ${{ secrets.PG_DB }}
+          DB_PORT: ${{ vars.PG_PORT }}
         run: python test_connection_db.py
